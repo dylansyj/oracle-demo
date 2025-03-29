@@ -10,18 +10,21 @@ This is for demo purposes only.
 - OCI API keys set up
 - OCI logging service Log Groups
 - OCI logging service Logs
+- Docker
+- WSL2 (for windows)
 
 ## Installation
 
-Within survey-be folder, run `mvn clean install` 
-
-Set up OCI config/private key
-
-config file, specify logID
+1. Within survey-be folder, run `mvn clean install` 
+2. Create a file called config (no extension) within same directory as Dockerfile, copy the API key config generated from OCI
+3. Copy and paste your privatge key to same directory as Docker file, rename to private.pem
+4. Edit config.yml, update ociLogId to use your own logid value -> retrieve from OCI > Logging > Logs > 'Your Log Name' > OCID value
 
 ## Usage
 
-Run using following command `java -jar target/demo-1.0-SNAPSHOT.jar server config.yml`
+Build container : `docker build -t survery-demo .`
+
+Run container : `docker run -p 8080:8080 survey-demo`
 
 ## Contributing
 
