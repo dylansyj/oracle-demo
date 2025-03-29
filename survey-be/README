@@ -1,0 +1,35 @@
+# Survey Backend
+
+This is for demo purposes only.
+
+## Prerequisites
+
+- JDK 24 [https://www.oracle.com/sg/java/technologies/downloads/]
+- Maven
+- OCI cloud account
+- OCI API keys set up
+- OCI logging service Log Groups
+- OCI logging service Logs
+
+## Installation
+
+Within survey-be folder, run `mvn clean install` 
+
+Set up OCI config/private key
+
+config file, specify logID
+
+## Usage
+
+Run using following command `java -jar target/demo-1.0-SNAPSHOT.jar server config.yml`
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
