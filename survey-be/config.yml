@@ -1,0 +1,9 @@
+---
+ociLogId: "your-oci-log-id-here"
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
