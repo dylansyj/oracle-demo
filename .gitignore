@@ -3,3 +3,5 @@ survey-be/META-INF/MANIFEST.MF
 survey-be/.mvn/*
 survey-be/.idea/*
 survey-be/dependency-reduced-pom.xml
+survey-be/config
+survey-be/private.pem
