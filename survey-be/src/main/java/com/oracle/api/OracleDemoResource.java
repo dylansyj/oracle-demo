@@ -18,6 +18,8 @@ import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.*;
@@ -26,9 +28,10 @@ import java.util.*;
 @Produces(MediaType.APPLICATION_JSON)
 public class OracleDemoResource {
 
+    private static final Logger logger = LoggerFactory.getLogger(OracleDemoResource.class);
     private static final LoggingClient loggingClient;
     private static final ObjectMapper objectMapper = new ObjectMapper();
-    private String ociLogId;
+    private final String ociLogId;
     static {
         try {
             final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -41,7 +44,6 @@ public class OracleDemoResource {
 
     public OracleDemoResource(OracleDemoConfiguration configuration) {
         ociLogId = configuration.getOciLogId();
-        System.out.println("Default ociLogId: " + ociLogId);
     }
 
     @POST
@@ -81,10 +83,10 @@ public class OracleDemoResource {
             PutLogsResponse response = loggingClient.putLogs(request);
 
             if (response.get__httpStatusCode__() != 200) {
-                // log error, dont throw
+                logger.error("Failed to log to OCI: {}", response);
             }
         } catch (Exception e) {
-            //throw error
+            throw new RuntimeException("Internal error while sending logs to OCI", e);
         }
     }
 }
