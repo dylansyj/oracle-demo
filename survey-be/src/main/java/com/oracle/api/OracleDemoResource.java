@@ -47,7 +47,6 @@ public class OracleDemoResource {
     }
 
     @POST
-    @Timed
     @Path("/survey")
     public SurveyData surveyData(@Valid SurveyData surveyData) {
 
