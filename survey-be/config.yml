@@ -1,5 +1,5 @@
 ---
-ociLogId: "ocid1.log.oc1.ap-singapore-1.amaaaaaa2yseieqadcrmdmhrqynd4o47thhwhsapqhscjk7d2z2n26iffzja"
+ociLogId: "your-oci-log-id-here"
 server:
   applicationConnectors:
     - type: http
