@@ -15,10 +15,11 @@ This is for demo purposes only.
 
 ## Installation
 
-1. Within survey-be folder, run `mvn clean install` 
+1. Navigate to survey-be folder
 2. Create a file called config (no extension) within same directory as Dockerfile, copy the API key config generated from OCI
 3. Copy and paste your OCI private key to same directory as Docker file, rename to private.pem
 4. Edit config.yml, update ociLogId to use your own logid value -> retrieve from OCI > Logging > Logs > 'Your Log Name' > OCID value
+5. Run `mvn clean install` at same folder level as pom.xml
 
 ## Usage
 
